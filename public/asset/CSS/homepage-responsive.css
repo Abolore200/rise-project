@@ -1,0 +1,81 @@
+@media screen and (max-width:768px){ 
+    nav{display:block;width:100%;}
+    .nav-links ul{position:relative;background:red;width:100%;float:right;}
+    header{height:100vh;}
+    header .home-header{display:block;height:fit-content;}
+    .rise-home{background-color:rgba(0,0,0,.2);padding:8px 20px;padding-right:0px;padding-left:10px;
+    position:relative;z-index:2;}
+    .rise{display:flex;justify-content:space-between;align-items:center;margin:10px 0;}
+    .nav-links{position:absolute;width:50%;z-index:1;top:85px;bottom:0;}
+    .fa-bars{font-size:20px;}
+    /* .header-notes{margin-top:-100px;} */
+    .nav-link-button a{z-index:0;}
+    .nav-links ul{padding-top:30px;height:100%;}
+    .form{display:block;}
+    .col-opt-2 form input,.col-opt-2 form select,.col-opt-2 form input[type='text']{width:100%;margin:7px 0;}
+    .nav-links ul li{width:fit-content;}
+    .col-opt-1 .col-opt-2{bottom:initial;}
+    .bars{display:flex;align-items:center;}
+    .h1-notes h1{font-size:30px;}
+    .nav-link-button{margin-bottom:25px;}
+    .header-link-button{margin-bottom:40px;}
+    article section:nth-child(1){margin-top:200px;}
+    .cat-row-1 ul,.cat-row-2 ul {flex-wrap:wrap;justify-content:space-between;}
+    .col-aval-home div .col-cat-row-1 .cat-row-1 ul li{max-width:44%;margin:8px auto}
+    .cat-row-1 ul li figure .rec-pos{top:-40px;float:right;position:relative;width:fit-content;margin-bottom:-35px;}
+    .cat-row-1 ul li figure figcaption{padding:0;margin-left:10px;padding-bottom:2px;}
+    .cat-row-1 ul li figure figcaption .rec-note p:last-child{padding-bottom:0px;}
+    .cat-row-1 ul li figure figcaption .rec-note p span{margin-left:0px;}
+    /*  */
+    .col-aval-home div .col-cat-row-2 .cat-row-2 ul li{max-width:44%;margin:8px auto}
+    .cat-row-2 ul li figure .rec-pos{top:-40px;float:right;position:relative;width:fit-content;margin-bottom:-35px;}
+    .cat-row-2 ul li figure figcaption{padding:0;margin-left:10px;padding-bottom:2px;}
+    .cat-row-2 ul li figure figcaption .rec-note p:last-child{padding-bottom:0px;}
+    .cat-row-2 ul li figure figcaption .rec-note p span{margin-left:0px;}
+    .col-sec-home{padding:0;}
+    .col-section-3 .col-section-3_1{padding:0 10px;}
+    .col-section-3_1 p{font-size:12px;}
+    .col-section-3_1 div{font-size:14px;}
+    .col-cat-row-2{margin:0;}
+    .col-cat-row-1{margin-bottom:0;}
+    section .col-section-3{margin-top:20px;margin-bottom:30px;}
+    .col-section-2_1_1-img ul li figure{width:200px;min-width:200px;}
+    .col-section-2_1_1-img ul li{margin:0 7px;}
+    .col-section-2_1_1-img ul li figure .img-caption{top:190px;}
+    .col-section-2_1_1-img ul li figure .img-caption-best-seller{width:max-content;font-size:15px;}
+    .img-fig-cap-loc{display:block;text-align:center;}
+    .col-section-2_1_1-img ul li figure figcaption .img-fig-cap-loc span:nth-child(2) a{padding-top:10px;justify-content:center;}
+    .col-section-2_1_1-img ul li figure figcaption .img-fig-cap-loc span:nth-child(1){padding:5px 40px;
+        background:linear-gradient(95.54deg, #F41313 -28.55%, #F90178 125.13%);color:#fff}
+    .col-section-2_1_1-img ul li figure figcaption p{font-size:16px;padding-bottom:0px;}
+    .col-section-2_1_1-img ul li figure figcaption{padding-top:0px;padding-bottom:5px;}
+    main{margin-bottom:0px;}
+    .nav-links ul li:last-child{display:none;}
+    .bars .fa-bars, .bars a .fa-cart-shopping{padding:8px 13px;font-size:30px;}
+    .rise a{font-size:25px;}
+    .link-nav{right:999px;transition:right .5s;transition-timing-function:ease-in;}
+    .link-nav.show{right:0;transition:right .5s;transition-timing-function:ease-out;}
+    .nav-links ul li:first-child{display:block;}
+
+
+
+
+    /* .nav-links{animation-name:navlinks;position:relative;animation-duration:.5s;animation-timing-function:ease-out;}
+    @keyframes navlinks{0%{right:-400px}100%{right:0px;}} */
+}
+@media screen and (min-width:862px) and (max-width:1047px){
+    .header-notes{width:85%;}
+    .form{width:95%;}
+    .col-opt-2 form input[type='text']{width:230px;}
+    .col-opt-2 select{width:200px;}
+}
+@media screen and (min-width:769px) and (max-width:861px){
+    .header-notes{width:85%;}
+    .col-opt-1 .col-opt-2{top:53px}
+    .form{width:90%;}
+    .col-opt-2 form input[type='text']{width:190px;}
+    .col-opt-2 select{width:160px;}
+}
+@media screen and (min-width:1048px){
+    .form{width:90%;}
+}

@@ -1,0 +1,42 @@
+*,::after,::before{padding:0;margin:0;outline:none;box-sizing:border-box;}
+a{text-decoration:none;}
+:root{--white--:#fff;--raleway--:Raleway}
+body{width:100%;font-family:Open Sans,'Raleway';}
+html{font-family:'Raleway',Open Sans;}
+nav{position:fixed;left:0;right:0;width:inherit;}
+header{width:20%;max-width:20%;background-color:rgba(0, 0, 255, 70%);}
+.homelink{padding-top:20px;padding-left:20px;padding-bottom:20px;background-color:lightskyblue;padding-right:20px}
+.homelink{display:flex;align-items:center;justify-content:space-between;}
+.homelink .rise{font-size:2rem;font-weight:600;color:white;padding:15px;}
+.navlist{margin-left:20px;margin-right:15px;margin-top:20px}
+.navlist ul li{list-style:none;margin:8px 0;padding-left:10px;padding-top:15px;padding-bottom:15px;margin-right:20px;}
+.fa-home, .fa-music, .fa-video-camera, .fa-bars, .fa-phone, .fa-question, .fa-quora{padding-right:10px;}
+.navlist ul li:hover{position:relative;animation-name:li;animation-duration:.3s;animation-fill-mode:forwards;}
+.navlist ul li a{font-weight:600;color:white}
+.fa-times{color:var(--white--);font-size: 1.4rem;padding:0px 5px 0px 18px;}
+.navlist ul li:hover{box-shadow:0px 0px 13px -3px;background-color:var(--white--);border-radius:5px;}
+.navlist ul li:hover a{color:#000;}
+.times .fa-bars{display:none;}
+.navlist ul li{display: flex;justify-content: space-between;align-items:center;position:relative;;}
+.show{width:5%}
+.nodis{display:none;}
+.navs{margin-left:0px;text-align:center;margin-right:0px;padding:0px 5px;}
+.homelinkJ{display:block;}
+section{display:flex;}
+.navl{position:relative;animation-name:navl;animation-duration:1s;}
+.arrow{content:"";border-right:2px solid var(--white--);border-bottom:2px solid var(--white--);
+    width:8px;height:8px;transform:rotate(45deg);margin-right:15px;}
+.navlist ul li:hover .arrow{border-right:2px solid #000;border-bottom:2px solid #000;}
+.arrow:nth-child(1){display:none;}
+/* .navlist ul li::after{content:"";border-right:2px solid var(--white--);border-bottom:2px solid var(--white--);
+width:15px;height:15px;transform:rotate(45deg)}
+.navlist ul li::after{position:absolute;top:12px;right:0;margin-right:15px}
+.navlist ul li:hover::after{border-right:2px solid #000;border-bottom:2px solid #000;} */
+/* .navlist ul li:hover::after{transform:rotate(225deg);top:17px;} */
+/* .navlist ul li::after{display:var(--display--);}
+.navlist ul li:nth-child(1)::after{display:none;} */
+
+
+
+@keyframes li{0%{left:0px;}100%{left:15px}}
+@keyframes navl{0%{left:0px;}100%{left:-500px}}

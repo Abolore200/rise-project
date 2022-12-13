@@ -1,0 +1,8 @@
+.h1-animate h1{animation-name:h1-animate;animation-duration:2s;animation-delay:.5s;position:relative;animation-fill-mode:forwards;}
+@keyframes h1-animate {0%{top:-700px}100%{top:0px}}
+.p-animate p{animation-name:p-animate;animation-duration:2s;animation-delay:.5s;position:relative;animation-fill-mode:forwards;}
+@keyframes p-animate {0%{left:-700px}100%{left:0px}}
+.table-home{animation-name:table-ani;animation-duration:.5s;animation-fill-mode:forwards;}
+@keyframes table-ani{0%{right:-200px}100%{right:0px;}}
+.cat-row-1 ul li figure:hover{position:relative;animation-name:liAni;animation-duration:.3s;animation-fill-mode:forwards;}
+@keyframes liAni{0%{top:0}100%{top:-5px}}

@@ -1,0 +1,11 @@
+.email-address, .input-name{position: relative;}
+.email-address .e-address,.password .la-password{position:absolute;top:50%;z-index:2;animation-fill-mode:forwards;}
+/* .email-address .removeLabel{top:0px} */
+@keyframes e-address1{
+    0%{top:50%};
+    100%{top:0%}
+}
+@keyframes la-pass{
+    0%{top:50%};
+    100%{top:0%}
+}

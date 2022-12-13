@@ -1,0 +1,31 @@
+body{width:100%;font-family:Arial,Helvetica,sans-serif,'Open Sans';background:linear-gradient(rgba(40, 40, 40, 0.9), rgba(40, 40, 40, 0.9)),url(../IMAGES/Mask\ Group.jpg);height:800px;background-repeat:no-repeat;background-size:cover;background-position:center;}
+html{font-family:Verdana,Geneva,Tahoma,sans-serif,'Open Sans';}
+*{padding:0;margin:0;box-sizing:border-box;outline:none;}
+header{width:100%;height:80px;align-items:center;display:flex;color:#fff;margin-bottom:20px;}
+nav{width:90%;margin:0 auto;}
+a{text-decoration:none;color:inherit}
+.rise a{font-weight:600}
+.rise-img{width:20px;height:20px}
+main{width:100%}
+.rise-home-page{width:60%;margin:0 auto;}
+form{background-color:#fff;border-radius:6px;width:450px;margin:0 auto;}
+.login-page{padding:20px 0;;}
+.sign-up-note{text-align:center;margin:15px 0 30px 0}
+.login-form{width:80%;margin:0 auto;}
+.password{position:relative;width:100%;}
+.first-name,.password,.email-address,.phone-number{padding-bottom:10px}
+#first-name,#email-address,#phone-number{width:100%;margin:0 auto;height:45px;background-color:#efefef;border:1px solid #efefef;padding:0 5px;margin-top:8px;}
+.first-name label,.password label,.email-address label,.phone-number label{letter-spacing:0px;font-size:12px;/**font-weight:bold**/}
+/* .password-logo{display:flex;position:relative;} */
+.logo{position:absolute;right:15px;top:40px;}
+.pass{padding-right:50px!important}
+.pass{width:100%;margin:0 auto;/*height:45px;*/background-color:#efefef;border:1px solid #efefef;padding:15px 5px;margin-top:8px;}
+.submit-btn{text-align:center;color:#fff;margin-top:20px;margin-bottom:15px}
+button[type='submit']{font-weight:600;color:inherit;border:1px solid rgb(244, 19, 19);background:linear-gradient(95.54deg, #F41313 -28.55%, #F90178 125.13%);width:85px;height:35px}
+.sign-in a{display:flex;font-size:12px;color:grey;justify-content:end;}
+.sign{color:#f41313}
+.home-sign-in{margin-top:25px;}
+.sign_inBtn{background:rgba(244, 19, 19, 50%)!important;cursor:no-drop;}
+#fillUp{font-size:.8rem;color:red;display:none;}
+.validateForm{transition-property:all;transition-duration:.4s;}
+.eAdd_laPass{animation-name:e-address1;animation-duration:.2s;}
