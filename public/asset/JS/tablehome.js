@@ -122,10 +122,3 @@ shoppingbar.addEventListener('click', function(e){
         tablehome.classList.toggle('show')
     }
 })
-
-const navlinks = document.querySelector('.class-nav-list')
-console.log(navlinks)
-
-const all = document.querySelector('.barhome')
-all.appendChild()
-

@@ -120,5 +120,10 @@ price.forEach(function(price){
 const navlinks = document.querySelector('.nav-links')
 const clickbar = document.querySelector('.fa-bars')
 clickbar.addEventListener('click', function(){
-    navlinks.classList.toggle("show")
+        navlinks.classList.toggle("show")
 })
+
+const copyspan = document.querySelector('.copyright p span')
+const updateyear = new Date().getFullYear()
+copyspan.innerHTML = `${updateyear}`
+
