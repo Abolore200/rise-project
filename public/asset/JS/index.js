@@ -1,81 +1,129 @@
-const times = document.querySelector('.fa-times')
-const timesHome = document.querySelector('.times')
-const bars = document.querySelector('.times .fa-bars')
-const header = document.querySelector('header')
-const homelinkJ= document.querySelector('header .homelink')
-const navlists = document.querySelector('.navlist')
-const navlist = document.querySelectorAll('.navlist a span')
-const navlistli = document.querySelectorAll('.navlist ul li')
-const homerise = document.querySelector('.homerise')
-const navlistfa = document.querySelectorAll('.navlist a .fa')
+const changeText = document.querySelector('.col-section-2_1_1-img ul')
+changeText.addEventListener('click', function(e){
+    if(e.target.classList.contains('click-a')){
+        e.preventDefault()
+        const postOne = e.target.parentElement.parentElement.parentElement.parentElement.parentElement
+        getPost(postOne)
+    }
+})
+function getPost(postOne){
+    createPost = {
+        image: postOne.querySelector('img').src,
+        title: postOne.querySelector('.img-fig-caption p').textContent,
+        price: postOne.querySelector('#price').textContent,
+        id: postOne.querySelector('a').getAttribute('data-id')
+    }
+    createTable(createPost)
+    // console.log(createPost)
+}
+function createTable(postOne){
+    const newTable = document.createElement('tr')
+    newTable.innerHTML = `
+        <tr>
+            <td><img src="${postOne.image}" class="img-width" /></td>
+            <td>${postOne.title}</td>
+            <td>${postOne.price}</td>
+            <td><a class="remove" href="#" data-id="${postOne.id}">X</a></td>
+        </tr>
+    `;
 
-navlistli.forEach(function(navlistli){
-    const divarrow = document.createElement('div')
-    divarrow.classList.add('arrow')
-    navlistli.appendChild(divarrow)
+    tableHome.appendChild(newTable)
+    addCartToLS(postOne)
+}
 
-    navlistli.addEventListener('click', function(){
-        divarrow.style.transform = 'rotate(225deg)'
-        divarrow.style.transition = 'transform .3s'
-    })
+const tableHome = document.querySelector('.table-home table tbody')
+tableHome.addEventListener('click', function(e){
+    let cartHome, cartRemoveLS;
+    if(e.target.classList.contains('remove')){
+        e.target.parentElement.parentElement.remove()
+        cartHome = e.target.parentElement.parentElement
+        cartRemoveLS = cartHome.querySelector('a').getAttribute('data-id')
+    } removeCartLS(cartRemoveLS)
 })
 
-const allarrow = document.querySelectorAll('.arrow')
-allarrow.forEach(function(){
-    allarrow[0].style.display = 'none'
+const table = document.querySelector('.table-home')
+const clearCart = document.querySelector('.removeBtn')
+clearCart.addEventListener('click', function(e){
+    while(tableHome.firstChild){
+        tableHome.removeChild(tableHome.firstChild)
+    }
+    localStorage.clear()
+})
+//
+// const shopping = document.querySelector('#shopping')
+// shopping.addEventListener('click', function(){
+//    table.classList.toggle('tableDisplay')
+// })
+// //
+// window.onclick = function(event) {
+// if (!event.target.matches('.fa-cart-shopping')) {
+//     var shopping = document.getElementsByClassName("table-home");
+//     var i;
+//     for (i = 0; i < shopping.length; i++) {
+//     var openDropdown = shopping[i];
+//     if (openDropdown.classList.contains('tableDisplay')) {
+//         openDropdown.classList.remove('tableDisplay');
+//     }
+//     }
+// }
+// }
+function addCartToLS(postOne){
+    let cart = getCartToLS()
+    cart.push(postOne)
+    localStorage.setItem('cart', JSON.stringify(cart))
+}
+function getCartToLS(){
+    let cart;
+    let cartLS = localStorage.getItem('cart')
+    if(cartLS === null){
+        cart = []
+    } else {
+        cart = JSON.parse(cartLS)
+    } return cart;
+}
+//
+document.addEventListener('DOMContentLoaded', function(){
+    let cart = getCartToLS()
+    cart.forEach(function(postOne) {
+        const newTable = document.createElement('tr')
+        newTable.innerHTML = `
+        <tr>
+            <td><img src="${postOne.image}" class="img-width" /></td>
+            <td>${postOne.title}</td>
+            <td>${postOne.price}</td>
+            <td><a class="remove" href="#" data-id="${postOne.id}">X</a></td>
+        </tr>
+    `;
+    tableHome.appendChild(newTable)
+    });
+})
+function removeCartLS(id) {
+    let cart = getCartToLS()
+    cart.forEach(function(cartsLS, index) {
+        if(cartsLS.id === id){
+            cart.splice(index, 1)
+        }
+    });
+    localStorage.setItem('cart', JSON.stringify(cart))
+}
+const addLink = document.querySelectorAll('.img-fig-cap-loc span a:nth-child(1)')
+addLink.forEach(function(addLink, index){
+    addLink.classList.add('click-a')
+    addLink.setAttribute('data-id', index)
+})
+const price = document.querySelectorAll('.img-fig-cap-span span:nth-child(2)')
+
+price.forEach(function(price){
+    price.id = 'price'
 })
 
+const navlinks = document.querySelector('.nav-links')
+const clickbar = document.querySelector('.fa-bars')
+clickbar.addEventListener('click', function(){
+        navlinks.classList.toggle("show")
+})
 
-times.addEventListener('click', function(){
-    header.classList.add('show')
-    header.style.transition = 'all .3s'
-    header.style.transitionTimingFunction = 'ease-in'
-    homerise.style.display = 'none'
-    times.style.display = 'none'
-    timesHome.style.textAlign = 'center'
-    bars.style.display = 'block'
-    bars.style.paddingRight = '0px'
-    navlist.forEach(function(e){
-        e.classList.add('nodis')
-        e.classList.add('navl')
-    })
-    navlistli.forEach(function(e){
-        e.style.paddingLeft = '0px'
-        e.style.display = 'block'
-        e.style.marginRight = '0px'
-    })
-    navlistfa.forEach(function(e){
-        e.style.paddingRight = '0px'
-    })
-    navlists.classList.add('navs')
-    homelinkJ.classList.add('homelinkJ')
-    allarrow.forEach(function(e){
-        e.style.display = 'none'
-    })
-})
-bars.addEventListener('click',function(){
-    header.classList.remove('show')
-    header.style.transition = 'all .3s'
-    header.style.transitionTimingFunction = 'ease-out'
-    homerise.style.display = 'block'
-    times.style.display = 'block'
-    bars.style.display = 'none'
-    navlist.forEach(function(e){
-        e.classList.remove('nodis')
-        e.classList.remove('navl')
-    })
-    navlistli.forEach(function(e){
-        e.style.removeProperty('padding-left')
-        e.style.removeProperty('display')
-        e.style.removeProperty('margin-right')
-    })
-    navlistfa.forEach(function(e){
-        e.style.removeProperty('padding-right')
-    })
-    navlists.classList.remove('navs')
-    homelinkJ.classList.remove('homelinkJ')
-    allarrow.forEach(function(e){
-        e.style.display = 'block'
-        allarrow[0].style.display = 'none'
-    })
-})
+const copyspan = document.querySelector('.copyright p span')
+const updateyear = new Date().getFullYear()
+copyspan.innerHTML = `${updateyear}`
+
