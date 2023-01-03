@@ -182,7 +182,8 @@ footer{background-color:#434242;}
 .copyright-media a p:hover .fa-facebook{color:#3b5998 }
 .copyright-media a p:hover .fa-linkedin{color:#0A66C2}
 .copyright-media a p:hover{background-color:var(--white--);}
-
+.cart-details{height:40px;background-color:rgba(3, 180, 3, 0.986);position:fixed;left:0;right:0;z-index:9999;display:none;}
+.cart-details p{text-align:center;width:100%;height:inherit;display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--white--);}
 
 @media screen and (min-width:769px){
     .nav-links ul{display:flex;align-items:center;}

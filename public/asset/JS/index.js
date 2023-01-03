@@ -27,6 +27,15 @@ function createTable(postOne){
         </tr>
     `;
 
+    const html = new htmlui()
+    html.displayCart(postOne)
+
+    // const cart = document.querySelector('.cart-details p')
+    // console.log(cart);
+    // if(cart !== null){
+    //     cart.remove()
+    // }
+
     tableHome.appendChild(newTable)
     addCartToLS(postOne)
 }
@@ -94,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function(){
             <td><a class="remove" href="#" data-id="${postOne.id}">X</a></td>
         </tr>
     `;
-    tableHome.appendChild(newTable)
+        tableHome.appendChild(newTable)
     });
 })
 function removeCartLS(id) {
@@ -127,3 +136,21 @@ const copyspan = document.querySelector('.copyright p span')
 const updateyear = new Date().getFullYear()
 copyspan.innerHTML = `${updateyear}`
 
+// const html = new htmlui()
+const body = document.querySelector('body')
+class htmlui{
+    displayCart(postOne){
+        const title = document.createElement('div')
+        title.className = "cart-details"
+        title.innerHTML = `
+           <p> ${postOne.title} has been added to the cart. </p>
+        `;
+        const header = document.querySelector('header')
+        body.insertBefore(title, header)
+        const cartDetails = document.querySelector('.cart-details')
+        cartDetails.style.display = 'block'
+        setTimeout(function(){
+            cartDetails.remove()
+        }, 1000)
+    }
+}
