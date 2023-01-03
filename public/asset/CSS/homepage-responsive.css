@@ -66,6 +66,7 @@
     .copyright-media a p{padding:10px;display:flex;align-items:center;}
     .fa-facebook,.fa-linkedin,.fa-twitter{font-size:20px;}
     .cart-details p{font-size:15px;padding:10px 5px;}
+    .displayerror{width:80%;}
 
 
 
@@ -77,6 +78,7 @@
 @media screen and (min-width:862px) and (max-width:1047px){
     .header-notes{width:85%;}
     .form{width:95%;}
+    .displayerror{width:95%;}
     .col-opt-2 form input[type='text']{width:230px;}
     .col-opt-2 select{width:200px;}
 }
@@ -84,9 +86,11 @@
     .header-notes{width:85%;}
     .col-opt-1 .col-opt-2{top:53px}
     .form{width:90%;}
+    .displayerror{width:90%;}
     .col-opt-2 form input[type='text']{width:190px;}
     .col-opt-2 select{width:160px;}
 }
 @media screen and (min-width:1048px){
     .form{width:90%;}
+    .displayerror{width:90%;}
 }

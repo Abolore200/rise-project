@@ -14,7 +14,6 @@ function getPost(postOne){
         id: postOne.querySelector('a').getAttribute('data-id')
     }
     createTable(createPost)
-    // console.log(createPost)
 }
 function createTable(postOne){
     const newTable = document.createElement('tr')
@@ -29,12 +28,6 @@ function createTable(postOne){
 
     const html = new htmlui()
     html.displayCart(postOne)
-
-    // const cart = document.querySelector('.cart-details p')
-    // console.log(cart);
-    // if(cart !== null){
-    //     cart.remove()
-    // }
 
     tableHome.appendChild(newTable)
     addCartToLS(postOne)
@@ -58,24 +51,7 @@ clearCart.addEventListener('click', function(e){
     }
     localStorage.clear()
 })
-//
-// const shopping = document.querySelector('#shopping')
-// shopping.addEventListener('click', function(){
-//    table.classList.toggle('tableDisplay')
-// })
-// //
-// window.onclick = function(event) {
-// if (!event.target.matches('.fa-cart-shopping')) {
-//     var shopping = document.getElementsByClassName("table-home");
-//     var i;
-//     for (i = 0; i < shopping.length; i++) {
-//     var openDropdown = shopping[i];
-//     if (openDropdown.classList.contains('tableDisplay')) {
-//         openDropdown.classList.remove('tableDisplay');
-//     }
-//     }
-// }
-// }
+
 function addCartToLS(postOne){
     let cart = getCartToLS()
     cart.push(postOne)
@@ -135,8 +111,6 @@ clickbar.addEventListener('click', function(){
 const copyspan = document.querySelector('.copyright p span')
 const updateyear = new Date().getFullYear()
 copyspan.innerHTML = `${updateyear}`
-
-// const html = new htmlui()
 const body = document.querySelector('body')
 class htmlui{
     displayCart(postOne){
@@ -146,11 +120,39 @@ class htmlui{
            <p> ${postOne.title} has been added to the cart. </p>
         `;
         const header = document.querySelector('header')
+        header.style.paddingTop = '40px'
         body.insertBefore(title, header)
         const cartDetails = document.querySelector('.cart-details')
         cartDetails.style.display = 'block'
         setTimeout(function(){
             cartDetails.remove()
-        }, 1000)
+            header.style.removeProperty('padding-top')
+        }, 1500)
+    }
+}
+
+const submitForm = document.querySelector('form')
+submitForm.addEventListener('submit', function(e){
+    e.preventDefault()
+    const inputText = document.querySelector('input[type="text"]').value
+    const inputCategories = document.querySelector('select[name="categories"]').value
+    const inputLocation = document.querySelector('select[name="location"]').value
+    const formSubmit = new Form()
+    if(inputText === '' || inputCategories === '' || inputLocation === ''){
+        formSubmit.displayFormError()
+    }
+})
+const colOpt2 = document.querySelector('.col-opt-2')
+class Form{
+    displayFormError(){
+        const error = document.createElement('div')
+        error.className = 'displayerror'
+        error.innerHTML = `
+           <p> All Fields Are Mandatory! </p>
+        `;
+        colOpt2.insertBefore(error, submitForm)
+        setTimeout(function(){
+            error.remove()
+        }, 2000)
     }
 }
