@@ -61,7 +61,7 @@
     .all-footer .footer-one,.all-footer .footer-three, .all-footer .footer-two{width:100%;margin:15px 0;}
     .footer-one .rise p, .footer-quick-link-list ul, .footer-categories-list ul{margin-top:6px;}
     .footer-bottom{flex-direction:column;}
-    .copyright p{font-size:15px;}
+    .copyright p{font-size:15px;text-align:center;}
     .copyright{margin-bottom:15px;}
     .copyright-media a p{padding:10px;display:flex;align-items:center;}
     .fa-facebook,.fa-linkedin,.fa-twitter{font-size:20px;}
