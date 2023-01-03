@@ -184,6 +184,9 @@ footer{background-color:#434242;}
 .copyright-media a p:hover{background-color:var(--white--);}
 .cart-details{height:40px;background-color:rgba(3, 180, 3, 0.986);position:fixed;left:0;right:0;z-index:9999;display:none;}
 .cart-details p{text-align:center;width:100%;height:inherit;display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--white--);}
+.cart-details::after{content:'';width:100%;height:3px;display:block;background-color:rgba(65,135,0,0.9);
+animation-name:cart-ani;}
+
 
 @media screen and (min-width:769px){
     .nav-links ul{display:flex;align-items:center;}
